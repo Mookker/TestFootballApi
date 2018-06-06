@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activities\CompetitionsView.cs" />
+    <Compile Include="Activities\CompetitionsDetailsView.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="ListViews\Adapters\CompetitionsAdapter.cs" />
     <Compile Include="ListViews\Items\CompetitionsListItemView.cs" />
@@ -84,6 +85,7 @@
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\layout\CompetitionsView.axml" />
     <AndroidResource Include="Resources\layout\competitionlistitemview.axml" />
+    <AndroidResource Include="Resources\layout\CompetitionDetailsView.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />

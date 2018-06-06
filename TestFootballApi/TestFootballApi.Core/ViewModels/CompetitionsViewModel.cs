@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using MvvmCross.Commands;
+using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using TestFootballApi.Core.Models;
 using TestFootballApi.Core.Services.Interfaces;
@@ -11,12 +14,14 @@ namespace TestFootballApi.Core.ViewModels
         : MvxViewModel
     {
         private readonly ICompetitionsService _competitionsService;
+        private readonly IMvxNavigationService _navigationService;
         private List<Competition> _competitions;
-
-        public CompetitionsViewModel(ICompetitionsService competitionsService)
+        private MvxCommand<Competition> _competitionClickedCommand;
+        
+        public CompetitionsViewModel(ICompetitionsService competitionsService, IMvxNavigationService navigationService)
         {
             _competitionsService = competitionsService;
-            Init();
+            _navigationService = navigationService;
         }
 
         public List<Competition> Competitions
@@ -32,6 +37,23 @@ namespace TestFootballApi.Core.ViewModels
         public async Task Init()
         {
             Competitions = await _competitionsService.GetCompetitions();
+        }
+        
+        public IMvxCommand CompetitionClickedCommand {
+            get
+            {
+                return _competitionClickedCommand = _competitionClickedCommand ??
+                                                    new MvxCommand<Competition>(competition =>
+                                                    {
+                                                        _navigationService
+                                                            .Navigate<CompetitionDetailsViewModel,
+                                                                CompetitionDetailsViewModelArgs>(
+                                                                new CompetitionDetailsViewModelArgs
+                                                                {
+                                                                    Competition = competition
+                                                                });
+                                                    });
+            }
         }
     }
 }
