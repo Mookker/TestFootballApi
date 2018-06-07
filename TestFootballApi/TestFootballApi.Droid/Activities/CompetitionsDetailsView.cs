@@ -25,11 +25,13 @@ namespace TestFootballApi.Droid.Activities
             var numberOfGamesText = FindViewById<TextView>(Resource.Id.numberOfGames);
             var numberOfTeamsText = FindViewById<TextView>(Resource.Id.numberOfTeams);
             var caption = FindViewById<TextView>(Resource.Id.caption);
+            var numberOfMatchDays = FindViewById<TextView>(Resource.Id.numberOfMatchDays);
 
             var set = this.CreateBindingSet<CompetitionDetailsView, CompetitionDetailsViewModel>();
             set.Bind(numberOfGamesText).To(vm => vm.NumberOfGames);
             set.Bind(numberOfTeamsText).To(vm => vm.NumberOfTeams);
             set.Bind(caption).To(vm => vm.Caption);
+            set.Bind(numberOfMatchDays).To(vm => vm.MatchDayStats);
             set.Apply();
         }
     }

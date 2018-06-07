@@ -15,6 +15,10 @@ namespace TestFootballApi.Core.Models
         [DataMember]
         public string Year { get; set; }
         [DataMember]
+        public int CurrentMatchday { get; set; }
+        [DataMember]
+        public int NumberOfMatchdays { get; set; }
+        [DataMember]
         public int NumberOfTeams { get; set; }
         [DataMember]
         public int NumberOfGames { get; set; }

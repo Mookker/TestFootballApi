@@ -15,7 +15,9 @@ namespace TestFootballApi.Core.ViewModels
 
         public int NumberOfTeams => Competition.NumberOfTeams;
         public int NumberOfGames => Competition.NumberOfGames;
-        public object Caption => Competition.Caption;
+        public string Caption => Competition.Caption;
+        public string MatchDayStats => $"{Competition.CurrentMatchday}/{Competition.NumberOfMatchdays}";
+        
         public Competition Competition
         {
             get => _competition;
@@ -26,6 +28,7 @@ namespace TestFootballApi.Core.ViewModels
                 RaisePropertyChanged(nameof(NumberOfTeams));
                 RaisePropertyChanged(nameof(Caption));
                 RaisePropertyChanged(nameof(NumberOfGames));
+                RaisePropertyChanged(nameof(MatchDayStats));
             }
         }
 

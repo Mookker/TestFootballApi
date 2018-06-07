@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://scehmas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -10,11 +10,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Caption"
-        android:gravity="center" />
+        android:gravity="center"
+        android:layout_alignParentTop="true" />
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/caption"
+        android:id="@+id/teamsLayout">
         <TextView
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="0dp"
@@ -35,7 +38,9 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/gamesLayout"
+        android:layout_below="@id/teamsLayout">
         <TextView
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="0dp"
@@ -53,4 +58,49 @@
             android:gravity="center"
             android:layout_weight="1" />
     </LinearLayout>
-</LinearLayout>
+    <LinearLayout
+        android:paddingTop="20dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/matchDayLayout"
+        android:layout_below="@id/gamesLayout">
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Matchdays"
+            android:gravity="left"
+            android:layout_weight="1"
+            android:paddingLeft="5dp" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/numberOfMatchDays"
+            android:text="20/30"
+            android:gravity="center"
+            android:layout_weight="1" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:text="View Teams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewTeams" />
+        <Button
+            android:text="View Fixtures"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewFixtures" />
+        <Button
+            android:text="View league table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/viewTable" />
+    </LinearLayout>
+</RelativeLayout>
