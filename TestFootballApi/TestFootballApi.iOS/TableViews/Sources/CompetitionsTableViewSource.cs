@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using MvvmCross.Platforms.Ios.Binding.Views;
+using TestFootballApi.iOS.TableViews.Cells;
 using UIKit;
 
 namespace TestFootballApi.iOS.TableViews.Sources
