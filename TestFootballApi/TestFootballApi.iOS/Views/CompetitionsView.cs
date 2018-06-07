@@ -19,7 +19,6 @@ namespace TestFootballApi.iOS
             Title = "Competitions";
             NavigationController.Title = "Competitions";
             NavigationController.NavigationBar.Translucent = false;
-            Competitions.ContentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentBehavior.Never;
 
             await ViewModel.Init();
             var source = new CompetitionsTableViewSource(Competitions);
