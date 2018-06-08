@@ -1,5 +1,4 @@
 using MvvmCross;
-using MvvmCross.Platform.IoC;
 using MvvmCross.ViewModels;
 using TestFootballApi.Core.Helpers.Implementations;
 using TestFootballApi.Core.Helpers.Interfaces;
@@ -13,13 +12,9 @@ namespace TestFootballApi.Core
     {
         public override void Initialize()
         {
-//            CreatableTypes()
-//                .EndingWith("Service")
-//                .AsInterfaces()
-//                .RegisterAsLazySingleton();
-
             Mvx.RegisterType<IHttpHelperService, HttpHelperWithAuth>();
-            Mvx.RegisterType<ICompetitionsService, CompetitionService>();
+            Mvx.RegisterType<ICompetitionsService, CompetitionsService>();
+            Mvx.RegisterType<ITeamsService, TeamsService>();
             RegisterAppStart<CompetitionsViewModel>();
         }
     }

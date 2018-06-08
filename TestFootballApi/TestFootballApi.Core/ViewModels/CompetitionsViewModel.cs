@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
-using System.Windows.Input;
 using MvvmCross.Commands;
 using MvvmCross.Navigation;
 using MvvmCross.ViewModels;
 using TestFootballApi.Core.Models;
+using TestFootballApi.Core.Models.Args;
 using TestFootballApi.Core.Services.Interfaces;
 
 namespace TestFootballApi.Core.ViewModels

@@ -107,6 +107,9 @@ namespace TestFootballApi.Droid
 			// aapt resource value: 0x7f030004
 			public const int numberOfTeams = 2130903044;
 			
+			// aapt resource value: 0x7f03000d
+			public const int teamName = 2130903053;
+			
 			// aapt resource value: 0x7f030003
 			public const int teamsLayout = 2130903043;
 			
@@ -142,10 +145,16 @@ namespace TestFootballApi.Droid
 			public const int CompetitionsView = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Main = 2130837507;
+			public const int competitionteamlistitemview = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int SplashScreen = 2130837508;
+			public const int CompetitionTeamsView = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int Main = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int SplashScreen = 2130837510;
 			
 			static Layout()
 			{

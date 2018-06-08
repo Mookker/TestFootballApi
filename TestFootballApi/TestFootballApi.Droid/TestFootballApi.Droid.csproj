@@ -65,9 +65,13 @@
   <ItemGroup>
     <Compile Include="Activities\CompetitionsView.cs" />
     <Compile Include="Activities\CompetitionsDetailsView.cs" />
+    <Compile Include="Activities\CompetitionTeamsView.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="ListViews\Adapters\CompetitionsAdapter.cs" />
+    <Compile Include="ListViews\Adapters\CompetitionTeamsAdapter.cs" />
+    <Compile Include="ListViews\CompetitionTeamsListView.cs" />
     <Compile Include="ListViews\Items\CompetitionsListItemView.cs" />
+    <Compile Include="ListViews\Items\CompetitionTeamListItemView.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Activities\SplashScreen.cs" />
@@ -80,12 +84,18 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidResource Include="Resources\layout\competitionteamlistitemview.axml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </AndroidResource>
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\layout\SplashScreen.axml" />
     <AndroidResource Include="Resources\layout\CompetitionsView.axml" />
     <AndroidResource Include="Resources\layout\competitionlistitemview.axml" />
     <AndroidResource Include="Resources\layout\CompetitionDetailsView.axml" />
+    <AndroidResource Include="Resources\layout\CompetitionTeamsView.axml" />
+    <AndroidResource Include="Resources\layout\competitionteamlistitemview.axml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />

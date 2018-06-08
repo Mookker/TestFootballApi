@@ -8,12 +8,12 @@ using TestFootballApi.Core.Services.Interfaces;
 
 namespace TestFootballApi.Core.Services.Implementations
 {
-    public class CompetitionService : ICompetitionsService
+    public class CompetitionsService : ICompetitionsService
     {
         private readonly IHttpHelperService _httpHelperService;
         private const string ApiPath = "http://api.football-data.org/v1";
 
-        public CompetitionService(IHttpHelperService httpHelperService)
+        public CompetitionsService(IHttpHelperService httpHelperService)
         {
             _httpHelperService = httpHelperService;
             _httpHelperService.AddCustomHeader("X-Auth-Token", "9c53e3f0fb824a9f85959d6f08d10d3f");

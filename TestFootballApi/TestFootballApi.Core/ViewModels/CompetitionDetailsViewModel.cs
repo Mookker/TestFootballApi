@@ -1,11 +1,21 @@
-﻿using MvvmCross.ViewModels;
+﻿using MvvmCross.Commands;
+using MvvmCross.Navigation;
+using MvvmCross.ViewModels;
 using TestFootballApi.Core.Models;
+using TestFootballApi.Core.Models.Args;
 
 namespace TestFootballApi.Core.ViewModels
 {
     public class CompetitionDetailsViewModel : MvxViewModel, IMvxViewModel<CompetitionDetailsViewModelArgs>
     {
         private Competition _competition;
+        private readonly IMvxNavigationService _navigationService;
+        private MvxCommand _teamsClickedCommand;
+
+        public CompetitionDetailsViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
 
         public void Prepare(CompetitionDetailsViewModelArgs parameter)
         {
@@ -29,6 +39,23 @@ namespace TestFootballApi.Core.ViewModels
                 RaisePropertyChanged(nameof(Caption));
                 RaisePropertyChanged(nameof(NumberOfGames));
                 RaisePropertyChanged(nameof(MatchDayStats));
+            }
+        }
+        
+        public IMvxCommand TeamsClickedCommand {
+            get
+            {
+                return _teamsClickedCommand = _teamsClickedCommand ??
+                                                    new MvxCommand(() =>
+                                                    {
+                                                        _navigationService
+                                                            .Navigate<CompetitionTeamsViewModel,
+                                                                CompetitionTeamsViewModelArgs>(
+                                                                new CompetitionTeamsViewModelArgs
+                                                                {
+                                                                    CompetitionId = _competition.Id.ToString()
+                                                                });
+                                                    });
             }
         }
 

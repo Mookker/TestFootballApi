@@ -8,15 +8,15 @@ using TestFootballApi.Droid.Items;
 
 namespace TestFootballApi.Droid.ListViews.Adapters
 {
-    public class CompetitionsAdapter : MvxAdapter
+    public class CompetitionTeamsAdapter : MvxAdapter
     {
-        public CompetitionsAdapter(Context context) : base(context)
+        public CompetitionTeamsAdapter(Context context) : base(context)
         {
         }
 
         protected override IMvxListItemView CreateBindableView(object dataContext, ViewGroup parent, int templateId)
         {
-            return new CompetitionsListItemView(Context, BindingContext.LayoutInflaterHolder, dataContext, parent,
+            return new CompetitionTeamListItemView(Context, BindingContext.LayoutInflaterHolder, dataContext, parent,
                 templateId);
         }
     }

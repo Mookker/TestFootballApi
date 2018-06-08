@@ -5,11 +5,11 @@ using TestFootballApi.Droid.ListViews.Adapters;
 
 namespace TestFootballApi.Droid.ListViews
 {
-    public class CompetitionsListView : MvxListView
+    public class CompetitionTeamsListView : MvxListView
     {
-        public CompetitionsListView(Context context, IAttributeSet attrs) : base(context, attrs)
+        public CompetitionTeamsListView(Context context, IAttributeSet attrs) : base(context, attrs)
         {
-            Adapter = new CompetitionsAdapter(context);
+            Adapter = new CompetitionTeamsAdapter(context);
         }
     }
 }

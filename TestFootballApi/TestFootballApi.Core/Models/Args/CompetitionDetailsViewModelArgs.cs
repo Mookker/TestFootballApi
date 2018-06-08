@@ -1,4 +1,4 @@
-namespace TestFootballApi.Core.Models
+namespace TestFootballApi.Core.Models.Args
 {
     public class CompetitionDetailsViewModelArgs
     {
